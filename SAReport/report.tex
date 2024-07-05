@@ -1,0 +1,112 @@
+\documentclass[11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{graphicx, caption, subcaption}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{csquotes}
+\usepackage{csvsimple}
+\usepackage{parskip}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{afterpage}
+\usepackage{tcolorbox}
+%\usepackage[
+%backend=biber,
+%style=alphabetic,
+%sorting=ynt
+%]{biblatex}
+%\addbibresource{bibliography.bib}
+
+\usepackage[document]{ragged2e}
+
+\geometry{
+    a4paper,
+    tmargin = 2.5cm,
+    bmargin = 2.5cm,
+    lmargin = 2.5cm,
+    rmargin = 2.5cm
+}
+
+\hypersetup{
+    colorlinks = true,
+    linkcolor = black,
+    filecolor = olive,      
+    urlcolor = olive,
+    citecolor = olive
+}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.92,0.92,0.92}
+
+\lstdefinelanguage{C}{
+      morekeywords={
+        SCCResult,ListGraph,SubGraph
+      },
+      morecomment=[l]{//}, 
+      morecomment=[s]{/}{/},
+      breaklines=true,
+      numbers=left,
+      captionpos=b,
+      breakatwhitespace=true,
+      basicstyle=\linespread{1.0}\ttfamily\small, 
+}
+    
+\lstdefinestyle{CodeStyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2,
+    escapechar={|}, 
+    language=bash
+}
+\lstset{style=CodeStyle}
+
+\begin{document}
+
+\input{chapters/title.tex}
+
+\chapter[Introduction]{Introduction}\label{ch:introduction}
+\input{chapters/introduction.tex}
+
+\chapter[Data Analysis]{Data Analysis}\label{ch:data-analysis}
+\input{chapters/datanalysis.tex}
+
+\chapter[GDTA]{GDTA}\label{ch:gdta}
+\input{chapters/gdta.tex}
+
+\chapter[Dashboard]{Dashboard}\label{ch:dashboard}
+\input{chapters/dashboard.tex}
+
+\chapter[Conclusions]{Conclusions}\label{ch:conclusions}
+\input{chapters/conclusions.tex}
+
+
+\setcounter{page}{1}
+\pagenumbering{roman}
+\tableofcontents
+
+
+\listoffigures
+\listoftables
+%\printbibliography
+
+\end{document}
