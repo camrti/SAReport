@@ -66,7 +66,7 @@ def F_M_function(x):
         case _:
             return None
 
-def engagement_level(F_SL, F_FQ, F_M, F_NA, mappings, w_SL=0.6, w_FQ=0.2, w_M=0.2, w_NA=0.1):
+def engagement_level(F_SL, F_FQ, F_M, F_NA, mappings, w_SL=0.6, w_FQ=0.2, w_M=0.2, w_NA=0.1, dashboardMapping : bool=False):
     """
     Function that returns engagement level given the CST parameters and mappings (weights are declared but can be changed)
 
@@ -90,6 +90,13 @@ def engagement_level(F_SL, F_FQ, F_M, F_NA, mappings, w_SL=0.6, w_FQ=0.2, w_M=0.
         Weight of function F_M (default already set)
     w_NA
         Weight of function F_NAL (default already set)
+    dashboardMapping : bool
+        Bool to specify if you need dashboard mapping (see get_dashboard_mapping() for more info) [True] of if you need the label [False]. Default is False
+
+    Returns:
+    ----------
+    E
+        Engagement level
     """
     # Extract mappings
     F_FQ_mapping = mappings["F_FQ"]
@@ -101,10 +108,37 @@ def engagement_level(F_SL, F_FQ, F_M, F_NA, mappings, w_SL=0.6, w_FQ=0.2, w_M=0.
     
     # Engagement level
     E = w_SL * F_SL + w_FQ * F_FQ_numeric + w_M * F_M - w_NA * F_NA_numeric
-    
+
+    # Check if dashboard mapping is needed
+    if dashboardMapping: return get_dashboard_mapping(E)
+
     if E < 0.4:
         return "Low Engagement"
     elif E < 0.7:
         return "Medium Engagement"
     else:
         return "High Engagement"
+    
+def get_dashboard_mapping(E):
+    """
+    Function to get our dashboard mapping for the Engagement value
+    The mapping is this:
+        - 0 if Low Engagement
+        - 1 if Medium Engagement
+        - 2 if High Engagement
+
+    Parameters:
+    ----------
+    E
+        Engagement level (numeric)
+    
+    Returns:
+    ----------
+    E
+        Dashboard-mapped engagement level
+    """
+    if E < 0.4:
+         return 0
+    if E < 0.7:
+        return 1
+    return 2
