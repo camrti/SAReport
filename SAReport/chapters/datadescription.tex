@@ -1,29 +1,51 @@
-The dataset used to create the mockup of the dashboards has been handcrafted by the authors.
-It consists of different CSV files, each one representing a table. These files describe
-the courses within an e-learning platform, the interactions between a user and courses,
+To ensure that all identified requirements were met, it was decided, 
+as previously mentioned, to use a dataset entirely created by us. This decision was driven by the need to have 
+complete control over the variables and information present, thus ensuring that every required aspect was 
+accurately represented and manageable. The dataset created consists of different CSV files, each one representing a table. 
+These files describe the courses within an e-learning platform, the interactions between a user and courses,
 the interactions between users, the resources used by the user on the platform, and the user's
 results in the courses.
+
+The files produced are tailored on the specific dashboard where used. These files are separated into two different
+directories: dashboard\_1 and dashboard\_2. The first directory contains the files used for the first dashboard which is
+related to the home of the platform, while the second directory contains the files used for the second dashboard which is
+related to a specific course. The files are named according to the information they contain, and the directory they are in.
+
 
 The dataset is composed of the following tables:
 \begin{itemize}
     \item 
         \textbf{Completed Course:} This table indicates whether the user has completed something each 
-        day or not for the different courses;
+        day or not for the different courses, the CSV file is named \textit{./dashboard\_1/completed\_course\_names.csv};
+    \item 
+        \textbf{Completed Modules:} This table indicates whether the user has completed something each 
+        day or not for the different modules, the CSV file is named \textit{./dashboard\_2/CourseCompletation.csv};
     \item 
         \textbf{User Hours Sessions:} This table represents the hours spent by the user on the platform 
-        each day and the average hours spent by other users;
+        each day and the average hours spent by other users, the CSV file 
+        is named \textit{./dashboard\_1/user\_hours\_sessions.csv};
+    \item 
+        \textbf{User Hours Sessions per Module:} This table represents the hours spent by the user for each module
+        of a course each day and the average hours spent by other users, the CSV file 
+        is named \textit{./dashboard\_2/TimeSpent.csv};
     \item 
         \textbf{Resources:} This table represents the hours of use of the different resources that are
-        available on the platform for each day;
+        available on the platform for each day, the CSV file is named \textit{./dashboard\_1/more\_resources.csv};
+    \item 
+        \textbf{Resources per Course:} This table represents the hours of use of the different resources that are
+        available for a course, the CSV file is named \textit{./dashboard\_2/MostUsedResources.csv};
     \item 
         \textbf{Forum:} This table represents the interactions between users on the forum, showing the number
-        of questions asked, the number of answers given, and the number of answers received;
+        of questions asked, the number of answers given, and the number of answers received, the CSV file is named 
+        \textit{./dashboard\_1/forum\_que\_ans\_given.csv};
+    \item 
+        \textbf{Forum per Module:} This table represents the interactions between users on the forum for each module of a course, showing the number
+        of questions asked, the number of answers given, and the number of answers received, the CSV file is named 
+        \textit{./dashboard\_2/forum.csv};
+    \item 
+        \textbf{Completed Course Votes:} This table shows the votes obtained by the user for each completed test of the courses, 
+        categorized by type (theory or exercise), the CSV file is named \textit{./dashboard\_1/votes\_courses.csv};
     \item 
         \textbf{Completed Modules Votes:} This table shows the votes obtained by the user for each completed module, 
-        categorized by type (theory or exercise).
+        categorized by type (theory or exercise), the CSV file is named \textit{./dashboard\_2/PracticeTheoryPerformance.csv}.
 \end{itemize}
-
-The files produced are tailored on the specific dashboard where used. Some of the previously described files
-are duplicated and adapted to the particular needs of the dashboard. For example, the \textbf{Forum} table describes
-the interactions for each course or the interactions for each module inside a specific course. The same applies to the
-\textbf{Resources} table, where the resources are divided by course or represent the resources used for a particular course.
