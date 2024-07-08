@@ -2,17 +2,17 @@ import matplotlib.pyplot as plt
 import numpy as np
 from functions import F_SL_function, F_M_function
 from plotting import plot_step_function, plot_customised_step_function
-from test_cases import week1cases
+from test_cases import week1cases, week2cases
 from constants import F_FQ_labels, F_NA_labels, F_FQ_values, F_NA_values
-from membership import plot_membership_functions
+from fuzzy import plot_fuzzy_functions as plot_ff
 
 def main():
     # Generate graphs
     # Fuzzified forum questions
     x_values = np.linspace(0, 3.5, 50)
-    plot_membership_functions(x_values,F_FQ_labels,"Fuzzified Forum Questions","plot_membership_forum_questions.png")
+    plot_ff(x_values,F_FQ_labels,"Fuzzified Forum Questions","plot_fuzzy_forum_questions.png")
     # Fuzzified non answered forum questions
-    plot_membership_functions(x_values, F_NA_labels,"Fuzzified Non Answered Forum Questions","plot_membership_not_answered.png")
+    plot_ff(x_values, F_NA_labels,"Fuzzified Non Answered Forum Questions","plot_fuzzy_not_answered.png")
     # F_FQ
     plot_step_function(F_FQ_labels, F_FQ_values, 'F_FQ (Questions on the forum)', 'Questions on the forum', 'plot_F_FQ.png')
     # F_NA
@@ -26,6 +26,7 @@ def main():
 
     # Run test cases
     week1cases()
+    week2cases()
 
 # MAIN
 if __name__ == "__main__":

@@ -67,7 +67,7 @@ def F_M_function(x):
         case _:
             return None
 
-def engagement_level(F_SL, F_FQ, F_M, F_NA, w_SL=0.6, w_FQ=0.2, w_M=0.2, w_NA=0.1, dashboardMapping : bool=False):
+def engagement_level(F_SL, F_FQ, F_M, F_NA, w_SL=0.56, w_FQ=0.12, w_M=0.32, w_NA=0.10, dashboardMapping : bool=False):
     """
     Function that returns engagement level given the CST parameters and mappings (weights are declared but can be changed)
 
