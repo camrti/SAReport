@@ -16,7 +16,7 @@ def plot_step_function(labels, values, title, xlabel, filename):
     xlabel
         x axis label
     filename
-        filename for saving the file
+        Filename for saving the file
     """
     plt.figure(figsize=(10, 6))
     plt.step(labels, values, where='post', label=title, marker='o')
@@ -46,7 +46,7 @@ def plot_customised_step_function(x_values, y_values, label : str, xlabel : str,
     xlabel : str
         x axis label
     filename : str
-        filename for saving the file
+        Filename for saving the file
     """
     plt.figure(figsize=(10, 6))
     plt.step(x_values, y_values, where='post', label=label, marker='o')

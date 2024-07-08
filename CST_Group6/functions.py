@@ -1,4 +1,5 @@
 # Helper functions for CST group 6
+from constants import F_FQ_NA_mappings
 
 def F_SL_function(x):
     """
@@ -66,7 +67,7 @@ def F_M_function(x):
         case _:
             return None
 
-def engagement_level(F_SL, F_FQ, F_M, F_NA, mappings, w_SL=0.6, w_FQ=0.2, w_M=0.2, w_NA=0.1, dashboardMapping : bool=False):
+def engagement_level(F_SL, F_FQ, F_M, F_NA, w_SL=0.6, w_FQ=0.2, w_M=0.2, w_NA=0.1, dashboardMapping : bool=False):
     """
     Function that returns engagement level given the CST parameters and mappings (weights are declared but can be changed)
 
@@ -80,8 +81,6 @@ def engagement_level(F_SL, F_FQ, F_M, F_NA, mappings, w_SL=0.6, w_FQ=0.2, w_M=0.
         y value of function F_FM
     F_NA
         y value of function F_NA
-    mappings
-        Dict of mappings
     w_SL
         Weight of function F_SL (default already set)
     w_FQ
@@ -98,16 +97,9 @@ def engagement_level(F_SL, F_FQ, F_M, F_NA, mappings, w_SL=0.6, w_FQ=0.2, w_M=0.
     E
         Engagement level
     """
-    # Extract mappings
-    F_FQ_mapping = mappings["F_FQ"]
-    F_NA_mapping = mappings["F_NA"]
-    
-    # Get numerical values
-    F_FQ_numeric = F_FQ_mapping[F_FQ]
-    F_NA_numeric = F_NA_mapping[F_NA]
     
     # Engagement level
-    E = w_SL * F_SL + w_FQ * F_FQ_numeric + w_M * F_M - w_NA * F_NA_numeric
+    E = w_SL * F_SL + w_FQ * F_FQ_NA_mappings["F_FQ"][F_FQ] + w_M * F_M - w_NA * F_FQ_NA_mappings["F_NA"][F_NA]
 
     # Check if dashboard mapping is needed
     if dashboardMapping: return get_dashboard_mapping(E)

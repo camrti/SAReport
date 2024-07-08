@@ -1,16 +1,6 @@
 # This file can be executed also as Main to get results of all test cases
 from functions import F_SL_function, F_M_function, engagement_level
 
-# Same mapping from main (copied for execution as main)
-mappings = {
-        "F_FQ": {"No activity": 0, "Low activity": 0.5, "High activity": 1},
-        "F_NA": {"None": 0, "Some": 0.5, "Many": 1}
-    }
-
-# Get lists from mapping dictionary (needed for Person creation later)
-chiavi_F_FQ = list(mappings["F_FQ"].keys())
-chiavi_F_NA = list(mappings["F_NA"].keys())
-
 # Person class
 class Person():
     """
@@ -75,7 +65,7 @@ class Person():
         str
             Value of engagement level of user
         """
-        return engagement_level(self.fsl, self.ffq, self.fm, self.fna, mappings)
+        return engagement_level(self.fsl, self.ffq, self.fm, self.fna)
     
     def print_engagement_level(self):
         """
@@ -92,4 +82,4 @@ class Person():
         int
             Dashboard-mapped value of engagement level of user
         """
-        return engagement_level(self.fsl, self.ffq, self.fm, self.fna, mappings, dashboardMapping=True)
+        return engagement_level(self.fsl, self.ffq, self.fm, self.fna, dashboardMapping=True)
