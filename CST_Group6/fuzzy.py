@@ -21,8 +21,8 @@ def get_fuzzy_rules(labels):
         raise ValueError("You need to specify 3 labels")
     fuzzy_rules = [
         (lambda x: 1.0 if x <= 0 else (1 - x) if 0 < x < 1 else 0.0, labels[0]),
-        (lambda x: x if 0 < x < 1 else (1.0 if 1 <= x <= 2 else (3 - x if 2 < x < 3 else 0.0)), labels[1]),
-        (lambda x: 0.0 if x <= 2 else (x - 2) if 2 <= x <= 3 else 1.0, labels[2]),
+        (lambda x: x if 0 < x < 1 else (1.0 if 1 <= x <= 3 else (4 - x if 3 < x < 4 else 0.0)), labels[1]),
+        (lambda x: 0.0 if x < 3 else (x - 3) if 3 <= x < 4 else 1.0, labels[2]),
     ]
     return fuzzy_rules
 

@@ -9,7 +9,7 @@ from fuzzy import plot_fuzzy_functions as plot_ff
 def main():
     # Generate graphs
     # Fuzzified forum questions
-    x_values = np.linspace(0, 3.5, 50)
+    x_values = np.linspace(-0.5, 4.5, 200)
     plot_ff(x_values,F_FQ_labels,"Fuzzified Forum Questions","plot_fuzzy_forum_questions.png")
     # Fuzzified non answered forum questions
     plot_ff(x_values, F_NA_labels,"Fuzzified Non Answered Forum Questions","plot_fuzzy_not_answered.png")
