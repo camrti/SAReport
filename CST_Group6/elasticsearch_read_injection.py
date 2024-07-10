@@ -41,7 +41,7 @@ try:
                       data[user]['forum_question'], data[user]['not_answered'], 
                       data[user]['material'])
         
-        engagement_level = person.get_dashboard_mapped_engagement_level()
+        engagement_val = person.get_engagement_value()
         # print(engagement_level)
 
         # injecting the result of the cst function into elasticsearch
@@ -49,7 +49,7 @@ try:
             index='users_engagement_level',
             document={
                 'user': user,
-                'engagement_level': engagement_level
+                'engagement_level': engagement_val
             }
         )
 

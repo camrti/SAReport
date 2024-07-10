@@ -10,7 +10,7 @@ def week1cases():
         csv_reader = csv.reader(file)
         next(csv_reader)
         for row in csv_reader:
-            user = Person(row[0],int(row[1]),row[2],row[3],int(row[4]))
+            user = Person(row[0],int(row[1]),int(row[2]),int(row[3]),int(row[4]))
             user.print_engagement_level()
 
 def week2cases():
@@ -22,7 +22,7 @@ def week2cases():
         csv_reader = csv.reader(file)
         next(csv_reader)
         for row in csv_reader:
-            user = Person(row[0],int(row[1]),row[2],row[3],int(row[4]))
+            user = Person(row[0],int(row[1]),int(row[2]),int(row[3]),int(row[4]))
             user.print_engagement_level()
 
 # Run test cases as main

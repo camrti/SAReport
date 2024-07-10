@@ -1,36 +1,6 @@
 # Helper functions for CST group 6
 import matplotlib.pyplot as plt
 
-def plot_step_function(labels, values, title, xlabel, filename):
-    """
-    Plots and saves step functions (used for F_FQ and F_NA)
-
-    Parameters:
-    ----------
-    labels
-        x labels (for values)
-    values
-        x values
-    title
-        Plot title
-    xlabel
-        x axis label
-    filename
-        Filename for saving the file
-    """
-    plt.figure(figsize=(10, 6))
-    plt.step(labels, values, where='post', label=title, marker='o')
-    plt.title(f'Step function for {title}')
-    plt.xlabel(xlabel)
-    plt.ylabel('Value')
-    plt.grid(True)
-    plt.ylim(0, 1.1)
-    plt.yticks(sorted(set(values)))  # Mostra solo i valori assunti dalla funzione
-    plt.xticks(labels)  # Mostra solo i valori effettivamente assunti dalla funzione sull'asse X
-    plt.legend()
-    plt.savefig(filename)  # Salvataggio del grafico con il nome specificato
-    plt.close()  # Chiude il grafico per liberare memoria
-
 def plot_customised_step_function(x_values, y_values, label : str, xlabel : str, filename : str):
     """
     Plots and saves step functions of different values (used for F_SL and F_M)
@@ -55,8 +25,8 @@ def plot_customised_step_function(x_values, y_values, label : str, xlabel : str,
     plt.ylabel('Value')
     plt.grid(True)
     plt.ylim(0, 1.1)
-    plt.yticks(sorted(set(y_values)))  # Mostra solo i valori assunti dalla funzione
-    plt.xticks(x_values)  # Mostra solo i valori effettivamente assunti dalla funzione sull'asse X
+    plt.yticks(sorted(set(y_values)))
+    plt.xticks(x_values)
     plt.legend()
-    plt.savefig(filename)  # Salvataggio del grafico con il nome specificato
-    plt.close()  # Chiude il grafico per liberare memoria
+    plt.savefig(filename)
+    plt.close()
