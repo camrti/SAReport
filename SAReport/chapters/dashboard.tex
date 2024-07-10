@@ -15,8 +15,7 @@ Additionally, the dashboards are designed to be user-friendly, with a clean and 
 To limit complexity, and effort has been made to always provide explicit support SA Level 2, where necessary, so that information about his learning progress is always available to the student. In this way, the student can quickly understand his current situation and make informed decisions about his learning path.
 
 
-
-\section{Dashboard I: Improve student engagement with the platform and optimize student learning through personalization}
+\section{Dashboard I}
 
 The subgoals of this dashboard are to not lose the student's engagement with 
 the platform and to help in adapting the learning process to the student's
@@ -140,4 +139,46 @@ Regarding level three of
 Situation Awareness, the linear graph helps the student to project the time he/she will
 spend on the platform in the future on the base of the actual trend.
 
+\section{Dashboard II}
 
+The goal of the dashboard is to support the operator's objective of understanding the student's learning progress within a specific course. It is characterized by a title \textbf{Cybersecurity Fundamentals} to indicate the course the student is currently focusing on. The inclusion of a specific course title on the dashboard plays a crucial role in preventing user confusion, especially given the variety of courses a student might be enrolled in. 
+
+This clear indication of the course focus helps to avoid the misinterpretation of information, which is particularly important under conditions of high environmental or emotional stress. By doing so, it directly addresses and mitigates the risk of the \textbf{Wrong Mental Model} demon, ensuring that students maintain an accurate understanding of their learning progress and requirements within the context of the specific course they are viewing. 
+
+Some common guidelines were used to blend the user experience and create a sense of confidence in switching between the different dashboards and to enhance efficiency by transporting the experience matured in one dashboard to the other. This is helpful so that the operator can create expectations about the interface, increasing his or her satisfaction.
+
+
+Principle 8 guided the design of the entire dashboard, since information is not shown as it is obtained in order to avoid the \textbf{Data Overload} demon since it can increase the complexity of the dashboard and make it difficult to have a comprehensive understanding of the situation.
+The choice of different data visualizations used made it possible to reduce the effects of the \textbf{Data Overload} demon as well, by being able to convey the same information by expressing it in graphical form rather than in textual or tabular form (e.g., pie charts for the most used resources), reducing the cognitive load on the student. 
+
+A first view of the second dashboard is shown in the following figure.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/dashboard_2.png}
+    \caption{Dashboard II}
+    \label{fig:dashboard_2}
+\end{figure}
+
+With multiple subgoals active on the dashboard, it’s important that when a student opens it, they can quickly figure out the necessary information to achieve their objectives. 
+
+This follows Design Principle 1, which ensures that information is provided effectively to support decision-making. When a student clicks on a course, they will see charts in the center of the dashboard showing their progress and course completion status.
+
+These charts, like the others on the dashboard, also satisfy Design Principle 2 because the interface provides already processed and integrated information at level 2. Specifically, the data levels (level 2 and level 1) allow for a complete understanding of a critical situation, such as the student's performance in the course, without the need for further processing.
+
+To ensure that salience is appropriately balanced within the dashboard, emphasis is placed only on information considered important. For instance, the red threshold line in the main charts indicates that if a student's end-of-module test scores fall below 60\%, they need to decide on a strategy for improvement. This visual cue helps students understand that they should aim for scores above this threshold.
+
+Additionally, the estimated completion days for each module, where all the modules are listed with their description, are highlighted in red if they exceed four days, based on data from previous users who have taken the course. This alerts students that they may need to put in more effort for these particular modules.
+The use of red to draw attention to critical areas complies with Design Principle 6, clearly signaling to the student where they need to focus and prompting them to take corrective action if necessary.
+
+The dashboard also includes a gauge chart dedicated to overall course completion. If a student has completed less than 40\% of the course, this chart will highlight the need for increased attention to ensure timely course completion.
+The addition of a course completion chart helps reduce the cognitive load on users by offering a visual depiction of their progress. This feature was intentionally introduced to prevent users from having to remember the completion percentage shown on the main dashboard. By replicating this information across subsequent dashboards, our goal is to overcome the challenge of relying on memory (facing the Memory Trap demon), which can often not guarantee accurate awareness and decision-making.
+
+These design choices also support Design Principle 3 by providing level 3 projection assistance. This means that if a student maintains consistent performance across multiple modules, it can be projected that they will likely perform well in future modules. 
+
+Given that the dashboard supports three subgoals, it is likely that when a student first opens the dashboard for a specific course, they do so to check their understanding of the fundamental cybersecurity concepts. Through various charts—such as those showing their theoretical and practical test performance, course completion status, and average grades, they can assess their level of understanding of the course. 
+This also supports the subgoal related to optimizing learning through personalization, including a pie chart that shows the usage of different learning materials for each module in order to show a student learning preferences. 
+
+The other charts support goals related to engagement with the platform. For example, these include activities in the forum, engagement level badges obtained from the CST, the number of users online at the time of access, the time spent on the platform, and the days taken to complete each module compared to other students.
+
+Therefore, we assume that at first glance, the student decides to focus on the first subgoal \textbf{Comprehension of the fundamental concepts of cybersecurity} to reach their objective and then potentially switches to other supported goals as they shift their attention to the other charts. This approach satisfies Design Principle 5 and Design Principle 4 by including elements in the dashboard that capture attention on aspects satisfying different goals. This prevents attention from being confined to a limited set of information, thereby overcoming the issue of attentional tunneling and supporting the switch between goal-driven and data-driven modes based on the goal the student wishes to achieve.
