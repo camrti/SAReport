@@ -5,7 +5,7 @@ from person import Person
 # In case of executing this code and getting 'Failed to connect to Elasticsearch', remove the comment from the line below
 # in order to ignore the warning message obtained from a expired certificate. 
 # Suppress only the single InsecureRequestWarning from urllib3 needed to handle self-signed certificates
-#urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # Connect to the local Elasticsearch instance
 # , api_key="SXBOa2pKQUJDbFcxV0l4VzFBLW06SmZGeG1Uc05RMUthRkh6VzA3ekpBQQ=="
@@ -41,7 +41,7 @@ try:
                       data[user]['forum_question'], data[user]['not_answered'], 
                       data[user]['material'])
         
-        engagement_level = person.get_dashboard_mapped_engagement_level()
+        engagement_val = person.get_engagement_value()
         # print(engagement_level)
 
         # injecting the result of the cst function into elasticsearch
@@ -49,9 +49,11 @@ try:
             index='users_engagement_level',
             document={
                 'user': user,
-                'engagement_level': engagement_level
+                'engagement_level': engagement_val
             }
         )
+
+    print('Data injected')
 
     es.indices.refresh(index='')
 

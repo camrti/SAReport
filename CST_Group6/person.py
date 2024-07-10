@@ -1,5 +1,5 @@
 # This file can be executed also as Main to get results of all test cases
-from functions import F_SL_function, F_M_function, engagement_level
+from functions import F_SL_function, F_M_function, F_FQ_function, engagement_level
 
 # Person class
 class Person():
@@ -46,8 +46,8 @@ class Person():
         """
         self.name = name
         self.fsl = F_SL_function(F_SL)
-        self.ffq = F_FQ
-        self.fna = F_NA
+        self.ffq = F_FQ_function(F_FQ)
+        self.fna = F_FQ_function(F_NA)
         self.fm = F_M_function(F_M)
 
     def print_datas(self):
@@ -73,13 +73,13 @@ class Person():
         """
         print("Results for",self.name+":",self.get_engagement_level())
 
-    def get_dashboard_mapped_engagement_level(self):
+    def get_engagement_value(self):
         """
-        Returns the dashboard-mapped value of engagement of the user calculated with the engagement_level() function from functions.py
+        Returns the engagement value (0->1) and not the label
 
         Returns:
         ----------
         int
-            Dashboard-mapped value of engagement level of user
+            Engagement value
         """
-        return engagement_level(self.fsl, self.ffq, self.fm, self.fna, dashboardMapping=True)
+        return engagement_level(self.fsl, self.ffq, self.fm, self.fna, returnValue=True)
