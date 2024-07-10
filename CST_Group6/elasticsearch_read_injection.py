@@ -5,7 +5,7 @@ from person import Person
 # In case of executing this code and getting 'Failed to connect to Elasticsearch', remove the comment from the line below
 # in order to ignore the warning message obtained from a expired certificate. 
 # Suppress only the single InsecureRequestWarning from urllib3 needed to handle self-signed certificates
-#urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # Connect to the local Elasticsearch instance
 # , api_key="SXBOa2pKQUJDbFcxV0l4VzFBLW06SmZGeG1Uc05RMUthRkh6VzA3ekpBQQ=="
@@ -52,6 +52,8 @@ try:
                 'engagement_level': engagement_val
             }
         )
+
+    print('Data injected')
 
     es.indices.refresh(index='')
 
