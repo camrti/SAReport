@@ -3,14 +3,14 @@ import csv
 
 def runCases(filepath : str,weekNum : int = None):
     """
-    Runs week 1 test cases prints user names and results in the console
+    Runs test cases, printing user names and results in the console
 
     Parameters:
     ----------
     filepath : str
         String containing the name of the csv file with the records to analyze
     weekNum : int
-        Week number to print in console (default = None. None value with print a "Rusults:" string)
+        Week number to print in console (default = None. None value prints a "Rusults:" string)
     """
     if weekNum is not None:
         print(f"Test case week {weekNum}:")
