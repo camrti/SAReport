@@ -1,7 +1,7 @@
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt # Specified because it is used in plot functions
 from functions import F_SL_function, F_M_function, F_FQ_function
 from plotting import plot_customised_step_function
-from test_cases import week1cases, week2cases
+from test_cases import runCases
 
 def main():
     # Generate graphs
@@ -18,8 +18,8 @@ def main():
     plot_customised_step_function(x_values,[F_M_function(x) for x in x_values],'F_M (Usage of provided material)','Usage of provided material','plot_F_M.png')
 
     # Run test cases
-    week1cases()
-    week2cases()
+    runCases("users_context_attributes.csv",1)
+    runCases("week2CST.csv",2)
 
 # MAIN
 if __name__ == "__main__":
