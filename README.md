@@ -9,9 +9,13 @@ of an integrated dashboard.
 ## Repository Contents
 - [Report](#report)
 - [CST](#cst)
+- [Dashboard Installation](#dashboard-installation)
 
 ## Report
-This directory containes all the file for the .pdf report of the project
+This directory containes all the file for the .pdf report of the project. The report is made in LaTeX.
+Contents:
+- assets: Containes all assets used in the report.
+- chapters: Containers .tex files for the chapters
 
 ## CST
 This directory containes all the file for the CST (which is realized in python).
@@ -23,3 +27,10 @@ Contents:
 - person.py: Class for platform's users management
 - plotting.py: Plotting utilities for graphs
 - test_cases.py: Runs the test cases. It's called in main but can also be executed as a standalone.
+- users_context_attributes.csv: Sample data for week 1 test case.
+- week2CST.csv: Sample data for week 2 test case.
+
+Notes: The code requires all files to be in the same directory. If you want the .csv to be in other directories you need to modify the path where the function runCases() is called.
+Check code documentation for more details.
+
+## Dashboard installation
