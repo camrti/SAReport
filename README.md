@@ -10,7 +10,7 @@ emphasis on situational awareness, this project is structured into two primary c
 first involves Goal-Driven Task Analysis (GDTA), and the second focuses on the implementation
 of an integrated dashboard.
 
-## Context Space Theroy directory
+## Context Space Theory directory
 
 This directory contains all the files for the CST (which is realized in Python).
 
@@ -48,4 +48,4 @@ For dashboard_2 directory:
 
 The dashboards are separated because they have been developed in parallel on two different devices.
 
-To correctly load the volumes it is needed the latest Docker-Desktop version. Firstly, execute the `docker compose up -d` command in the directory of the dashboard you want to visualize. Then go to the 'Volumes' section of the Docker-Desktop application, for each volume created, open it click on 'Import' and import the related archive. For the dashboard_1 there are four volumes to import: two for ElasticSearch, one for the certificates generated, and one for Kibana. Instead, for the second dashboard there is only one volume to import. Then to be sure that all the containers are correctly working, execute `docker compose down` and then `docker compose up -d` and wait for everything to start correctly.
+To correctly load the volumes it is needed the latest Docker-Desktop version. Firstly, execute the `docker compose up -d` command in the directory of the dashboard you want to visualize. Then go to the 'Volumes' section of the Docker-Desktop application, for each volume created, open it, click on 'Import' and import the related archive. For the dashboard_1 there are four volumes to import: two for ElasticSearch, one for the certificates generated, and one for Kibana. Instead, for the second dashboard there is only one volume to import. Then to be sure that all the containers are correctly working, execute `docker compose down` and then `docker compose up -d` and wait for everything to start correctly.
