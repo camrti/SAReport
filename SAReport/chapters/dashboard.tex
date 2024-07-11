@@ -1,11 +1,11 @@
 This paragraph will present the two dashboards implemented, the design principles used, and the SA demons that were tried to avoid. As mentioned before, to ensure that most of the requirements identified in the previous stage could be represented, it was decided to use a dataset entirely created by us to have full control over the data and its structure.
 
-The whole system is divided into two dashboards, each associated with multiple goals. The first dashboard aims to estabilish \textbf{Common Operational Picutre} that allows students to have an understanding of the current situation by integrating multiple subgoals into coherent visualizations. 
-In contrast, the second dashboard, focuses on tracking and presenting student learning progress within a specific course.
+The whole system is divided into two dashboards, each associated with multiple goals. The first dashboard aims to establish \textbf{Common Operational Picture} that allows students to have an understanding of the current situation by integrating multiple subgoals into coherent visualizations. 
+Unlike, the second dashboard, focuses on tracking and presenting student learning progress within a specific course.
 
 \begin{itemize}
     \item \textbf{Dashboard I}: Subgoal 1.2.1 - Improve student engagement with the platform and Subgoal 1.2.2 - Optimize student learning through personalization.
-    \item \textbf{Dashboard II}: Subgoal 1.1.1 - Comprehension of the fundamental concepts of cybersecurity and Subgoal 1.2.1 - Improve student engagement with the platform and Subgoal 1.2.2 - Optimize student learning through personalization.
+    \item \textbf{Dashboard II}: Subgoal 1.1.1 - Comprehension of the fundamental concepts of cybersecurity, Subgoal 1.2.1 - Improve student engagement with the platform and Subgoal 1.2.2 - Optimize student learning through personalization.
 \end{itemize} 
 
 Both of the dashboards attempt to achieve the trade-off between supporting the operator's goal and supporting the overall SA. By placing the most important information appropriately at the center of each dashboard and positioning the supporting information on the sides, we ensure that relevant data is easily accessible to the student. This design choice is intended to reduce the cognitive load on the student, so he/she can quickly understand his current situation and make informed decisions about his learning path.
@@ -15,7 +15,7 @@ Both of the dashboards attempt to achieve the trade-off between supporting the o
 
 The objectives of this dashboard are to maintain student engagement with the platform and to assist in tailoring the learning process to meet the student's needs.
 
-To ensure the student is aware that they are on the home page of the platform, the name \textbf{OffSec} is included, representing \textit{Offensive Cybersecurity}, the field in which the student is enhancing their expertise. Additionally, a "Welcome Marta!" message is displayed to emphasize that this dashboard is the home page. These two elements help prevent the student from using an incorrect mental model when interpreting the dashboard's components, effectively avoiding the \textbf{Wrong Mental Model} demon.
+To ensure the student is aware that they are on the home page of the platform, the name \textbf{OffSec} is included, representing \textit{Offensive Cybersecurity}. Additionally, a "Welcome Marta!" message is displayed to emphasize that this dashboard is the home page. These two elements help prevent the student from using an incorrect mental model when interpreting the dashboard's components, effectively avoiding the \textbf{Wrong Mental Model} demon.
 
 \begin{figure}[H]
     \centering
@@ -24,28 +24,28 @@ To ensure the student is aware that they are on the home page of the platform, t
     \label{fig:dashboard_1}
 \end{figure}
 
-To ensure compliance with \textbf{Design Principle 4} and in order to support \textbf{Design Principle 1} by organizing information around the dashboard's goals, the dashboard should be designed with central elements supporting specific goals, 
+To ensure compliance with \textbf{Design Principle 4} and in order to support \textbf{Design Principle 1}, the dashboard should be designed with central elements supporting specific goals, 
 surrounded by elements that provide an overview of the student's progress. But typically, e-learning systems display an overview of the courses the student is following. 
 Therefore, we adopted this common approach for our system as well.
 As shown in Figure 6.1, the center of the screen features a matrix of the various courses the student needs to complete for upskilling, 
 with each course's completion percentage clearly indicated. This allows students to quickly understand their progress, supporting their 
-overall situational awareness (SA).
+overall SA.
 
 This design choice supports both \textbf{Design Principle 5 and Design Principle 6} through the effective use of salience. 
-Darker colors highlight courses with lower completion percentages, drawing the student's attention to these areas and guiding the student towards the courses that need more
+Darker colors in the matrix highlights courses with lower completion percentages, drawing the student's attention to these areas and guiding the student towards the courses that need more
 attention before their deadlines. This can prompt a shift from data-driven to goal-driven behavior, encouraging the student to prioritize completing the less finished courses. 
 
 In order to form the right Global SA of the student, on 
-the right side of the screen is present a spider chart showing the results of the student on the theoretical tests and
-the practical tests, weighted on the number of tests completed for the course.
+the right side of the screen there is a spider chart showing the results of the student on theoretical tests and
+practical tests, weighted on the number of tests completed for the course.
 Instead, on the left side of the screen, there is a
-donut chart, which shows which resources the student has preferred for the different courses 
+donut chart, that shows which resources the student has preferred for the different courses 
 the student has used, in order to support the \textbf{Subgoal 1.2.2}.
 
 The linear graph, which shows the student's time spent on the platform since the start of the upskilling process, supports \textbf{Subgoal 1.2.1}. 
-It allows the user to compare their time spent on the platform with the time spent by other users. 
-By observing this graph, the student can become aware of their own hours invested. 
-If they notice that other students have spent significantly more time on the platform, it can serve as a motivation for them to dedicate more time to their learning. 
+It allows the student to compare his/her time spent on the platform with the time spent by other students. 
+By observing this graph, the student can become aware of his/her own hours invested. 
+If the student notices that other students have spent significantly more time on the platform, it can serve as a motivation for him/her to dedicate more time to the learning process. 
 This comparative visualization encourages students to increase their engagement and commitment to the platform, cultivating a more competitive and driven learning environment.
 
 
@@ -56,7 +56,7 @@ This comparative visualization encourages students to increase their engagement 
     \label{fig:dashboard_1_subgoal_121}
 \end{figure}
 
-These elements indicate student engagement with the platform, presenting (from right to left) the computed engagement level using the CST described in a previous chapter, the number of students currently online, a notifications section from the forum, and an element displaying the last viewed module to help students recall their recent activity. Together, these components maintain continuous global situational awareness to prevent the occurrence of the \textbf{Attentional Tunneling} demon.
+The elements present in Figure 6.3 indicate student engagement with the platform, presenting (from right to left) the computed engagement level using the CST described in a previous chapter, the number of students currently online, a notifications section from the forum, and an element displaying the last viewed module. Together, these components maintain continuous global situational awareness to prevent the occurrence of the \textbf{Attentional Tunneling} demon.
 In particular, the last viewed module element helps to avoid the \textbf{Memory Trap} demon by providing a quick reminder of the student's most recent activity, reducing the cognitive load associated with remembering the last module they accessed.
 
 \begin{figure}[H]
@@ -66,25 +66,20 @@ In particular, the last viewed module element helps to avoid the \textbf{Memory 
     \label{fig:dashboard_1_global_top}
 \end{figure}
 
-Given that human attention and working memory are limited, \textbf{Design Principle 2} of design has been satisfied, most of the information has been processed and integrated in terms of Level 2 SA, supporting comprehension.
+Given that human attention and working memory are limited, most of the information has been processed and integrated in terms of Level 2 SA, supporting comprehension. Therefore, \textbf{Design Principle 2} has been satisfied.
 This allowed us to avoid the \textbf{Memory Trap} demon, which can occur when students are required to remember too much information. 
 Moreover, the use of visualizations such as the spider chart and the donut chart helps to avoid the \textbf{Data Overload} demon and the \textbf{Complexity Creep} demon, as they provide a more compact representation of the data, reducing the amount of information that needs to be processed.
 
 Another element that could contribute to support the \textbf{Design Principle 5} is the presence of the notifications from the forum, which can capture the student's attention and facilitate the switch between goal-driven and data-driven processing. This element helps to avoid the \textbf{Attentional Tunneling} demon.
 
-The engagement level element is displayed as a square shape filled with a color (green, yellow, orange), which can capture the student's attention when it is not needed, causing a bit of the \textbf{Misplaced Salience} demon. 
-Though, the use of colors (green, yellow, orange) suggests that if the indicator is green, the student's attention may briefly focus on it, indicating satisfaction or a certain level of confidence in their engagement level. In contrast, the yellow and orange colors might encourage the student to spend more time on the platform and interact more actively with it.
+The engagement level element is displayed as a square shape filled with a color, which can capture the student's attention when it is not needed, causing a bit of the \textbf{Misplaced Salience} demon. 
+Though, the use of colors (green, yellow, orange) suggests that if the indicator is green, the student's attention may briefly focus on it, indicating satisfaction or a certain level of confidence in their engagement level. Unlike the yellow and orange colors that might encourage the student to spend more time on the platform and interact more actively with it.
 
-In order to not get \textbf{Data Overload} demon, as said before, the data are visualized
-more compactly, for example, is not shown the sequence of the votes of the student in
-the home dashboard, but is shown a spider graph containing the results of the student on the
-theory tests and the exercises tests, weighted on the number of tests completed for the course.
-
-The dashboard effectively prevents the \textbf{Out of the Loop} demon since there are no autonomous functions that operate independently and it is crucial for the student to make decisions about their actions and timing autonomously.
+The dashboard effectively prevents the \textbf{Out of the Loop} demon since there are no autonomous functions that operate independently and since it is crucial for the student to make decisions about their actions and timing autonomously.
 
 Our goal is also to fulfill \textbf{Design Principle 3}, which emphasizes providing Level 3 assistance. 
 This is facilitated within our dashboard through the inclusion of a forum. By interacting with other users to discuss course-related 
-questions and challenges, students can obtain answers and support. This interaction encourages them to continue their learning journey, 
+questions and challenges, students can obtain answers and support. This interaction could encourage them to continue their learning journey, 
 thereby reducing the likelihood of abandoning the platform. 
 
 \section{Dashboard II}
