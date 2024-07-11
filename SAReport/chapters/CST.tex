@@ -1,15 +1,19 @@
-The \textit{Context Space Theory} is a theory in the field of cognitive science and 
+The \textit{Context Space Theory} (CST) is a theory in the field of cognitive science and 
 computational linguistics that uses multidimensional spaces to represent the meaning 
 of words (and sentences) in respect to the context in which they appear.
 
-Multidimensional spaces are called \textit{Context Spaces}. Context features are called 
-\textit{Context Attributes} and are represented as an axis of the multidimensional space. 
-The set of situations that may occur is called \textit{Situation Space}.
+\begin{itemize}{
+    \item \textbf{Context Space}: a multidimensional space where each dimension represents a context attribute;
+    \item \textbf{Context Attribute}: a feature that describes the context in which a word appears;
+    \item \textbf{Situation Space}: the set of situations that may occur;
+}
+\end{itemize}
+
 
 \section{CST For Engagement Level}
 We decided to use the CST to assess the student's engagement level on the platform. 
 This is a particularly useful parameter to show the user whether his/her use of the 
-platform complies with the requirements and is shown on the dashboard through a badge. \\
+platform complies with the engagement level requirements and it is shown on the dashboard through a badge. \\
 We decided that the data to be used for CST will be taken from the last 7 days with 
 the following clarifications:
 \begin{itemize}
@@ -19,8 +23,6 @@ the following clarifications:
     (using a sliding window), thus allowing the user to adapt dynamically.
 \end{itemize}
 
-
-\subsection{Situation Space}
 In our Situation Space we identify 3 situations:
 \begin{itemize}
     \item High engagement;
@@ -30,7 +32,6 @@ In our Situation Space we identify 3 situations:
 The situation the student is in will be given by a weighted summary of the context 
 attributes considered.
 
-\subsection{Context Attributes}
 Before defining context attributes, it's important to define the attributes to consider:
 \begin{itemize}
     \item Session length;
@@ -40,14 +41,14 @@ Before defining context attributes, it's important to define the attributes to c
 \end{itemize}
 These attributes are considered relevant because:
 \begin{itemize}
-    \item Session length shows how much time the user spends on the platform;
+    \item Session length shows how many hours the user spends on the platform;
     \item The number of questions made on the forum shows how engaged the user is with the forum;
-    \item The number of unanswered questions shows which of the questions asked are possibly not relevant to other platform users;
+    \item The number of unanswered questions shows how many questions may not be relevant to other platform users;
     \item The amount of material used shows whether the user finds the provided material useful.
 \end{itemize}
 
-To go from attributes to context attributes, we must specify, for each attribute, a membership function that "maps" the values assumed by the attribute to a range from 0 to 1.
-\subsubsection{F\_SL}
+To go from attributes to context attributes, a membership function is defined for each attribute, in order to "map" the values assumed by the attribute to a range from 0 to 1.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{./assets/plot_F_SL.png}
@@ -55,7 +56,8 @@ To go from attributes to context attributes, we must specify, for each attribute
     \label{fig:plot_F_SL}
 \end{figure}
 This function is implemented this way because the company would prefer that users spend 28 hours per week on the platform. A higher number of hours is not rewarded further. At 18 hours there is a gap because the company wants to differentiate those who use the platform greatly from those who use it lightly.
-\subsubsection{F\_FQ}
+
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{./assets/plot_F_FQ.png}
@@ -63,7 +65,7 @@ This function is implemented this way because the company would prefer that user
     \label{fig:plot_F_FQ}
 \end{figure}
 This function is implemented this way because the company wants to differentiate between those who do not ask questions, those who ask some questions, and those who ask many questions.
-\subsubsection{F\_NA}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{./assets/plot_F_NA.png}
@@ -71,17 +73,18 @@ This function is implemented this way because the company wants to differentiate
     \label{fig:plot_F_NA}
 \end{figure}
 This function is made this way because the company wants to understand whether users' questions catch the attention of others or not.
-\subsubsection{F\_M}
+
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{./assets/plot_F_M.png}
     \caption{F\_M Membership Function}
     \label{fig:plot_F_M}
 \end{figure}
-This function is implemented this way because the company wants the provided material to be partitioned equally over the entire duration of the training. The optimal amount is 11; using more is not rewarded further.
+This function is implemented this way because the company wants that the provided material is used equally over the entire duration of the training. The optimal amount is 11; using more is not rewarded further.
 
-\subsection{Weights and situation calculation}
-Each context attribute has an associated weight. F\_SL, F\_FQ and F\_M are considered positive factors, where F\_SL is considered to be the most important. F\_NA is considered a negative factor with low relevance. This decision was made on the assumption that unanswered questions did not pique the interest of other users probably because they were not relevant in the context in which they were asked. Viewing this factor as negative penalizes those who ask an excessive number of questions on the forum in order to try to increase their engagement.
+
+Each context attribute has an associated weight. F\_SL, F\_FQ and F\_M are considered positive factors, where F\_SL is considered to be the most important. F\_NA is considered a negative factor with low relevance. This decision was made on the assumption that unanswered questions did not pique the interest of other users probably because they were not relevant in the context in which they were asked. The F\_NA factor penalizes those who ask an excessive number of questions on the forum in order to try to increase their engagement.
 
 \begin{table}[H]
     \begin{center}
@@ -108,9 +111,9 @@ S = \sum_{i=1}^3  w_i \cdot CA_i
 \]
 Where:
 \begin{itemize}
-    \item $CA_i$ is one of the context attributes defined above
-    \item $w_i$ is the relative weight
-    \item i=0,1,2,3
+    \item $CA_i$ is one of the context attributes defined above;
+    \item $w_i$ is the relative weight;
+    \item i=0,1,2,3.
 \end{itemize}
 Extended form formula:
 \[
@@ -118,8 +121,8 @@ S = w_{SL} \cdot F\_SL + w_{FQ} \cdot F\_FQ + w_{NA} \cdot F\_NA + w_M \cdot F\_
 \]
 
 \section{Simulation}
-We simulated on two time intervals. The first data is taken after 7 days from when 
-the users signed up in the platform (for simplicity, we will refer to this data as "week 1"), 
+We ran a simulation on two time intervals. The first data is taken after 7 days from when 
+the users signed up on the platform (for simplicity, we will refer to this data as "week 1"), 
 while the second taking was done after 12 days (for simplicity, we will say "week 2"). Six users 
 are considered.\\
 During week 1:
@@ -164,7 +167,7 @@ During week 2:
     studying.
     \item Matilde wants to continue cheating. She thinks she needs to spend even more time online and 
     ask even more questions.
-    \item Matthew continues his trend from the previous week. He completes more material, meanwhile,
+    \item Matteo continues his trend from the previous week. He completes more material, meanwhile,
     he interacts less on the forum. All his questions are answered.
 \end{itemize}
 
@@ -192,13 +195,12 @@ These results show the achievement of our idea of engagement:
 \begin{itemize}
     \item The most important element is the number of hours spent on the platform. You are able to 
     cheat by leaving devices on but with poor results without at least interacting with the forum.
-    \item With a good number of hours and a good amount of material used engagement drops if there 
+    \item With a good number of hours and a good amount of material used, engagement drops if there 
     is no interaction with the forum (unless the other parameters are perfect).
     \item The system is adaptive. The result can be recovered if user performance improves and, 
     also inversely, it drops as performance worsens.
 \end{itemize}
 
-\section{Dashboard Integration}
 The CST is integrated into the dashboard through the script \textit{elasticsearch\_read\_injection.py}. 
 This script creates a connection with Elastic Search, takes data from the 
 \textit{users\_context\_attributes} index present inside Elastic Search (i.e., the data corresponding 
