@@ -3,7 +3,7 @@
 The objective of this project is to implement a comprehensive e-learning system designed to assist
 users in tailoring their learning pathways and enhancing their skill sets. Developed with a strong
 emphasis on situational awareness, this project is structured into two primary components: the
-rst involves Goal-Driven Task Analysis (GDTA), and the second focuses on the implementation
+first involves Goal-Driven Task Analysis (GDTA), and the second focuses on the implementation
 of an integrated dashboard.
 
 ## Repository Contents
